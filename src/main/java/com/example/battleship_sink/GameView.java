@@ -19,12 +19,17 @@ import javafx.scene.layout.VBox;
 public class GameView {
 
     //properties
-    private GridPane enemyBoard;
-    private GridPane playerBoard;
+    protected GridPane enemyBoard = createGrid();
+    protected GridPane playerBoard = createGrid();
 
     //constructor
-    public GameView() {
 
+    public GameView(GridPane enemyBoard, GridPane playerBoard) {
+        this.enemyBoard = enemyBoard;
+        this.playerBoard = playerBoard;
+    }
+
+    public GameView() {
     }
 
     /**
@@ -32,9 +37,7 @@ public class GameView {
      * into a VBox with defined properties.
      * This method returns a Vbox with nodes residing inside of it.
      */
-    public VBox createGameView() {
-        enemyBoard = createGrid();
-        playerBoard = createGrid();
+    public VBox presentGameView() {
         enemyBoard.setPadding(new Insets(20, 20, 20, 20));
         enemyBoard.setAlignment(Pos.CENTER);
         playerBoard.setPadding(new Insets(20, 20, 20, 20));
@@ -68,5 +71,13 @@ public class GameView {
             }
         }
         return playerGrid;
+    }
+
+    public GridPane getEnemyBoard() {
+        return enemyBoard;
+    }
+
+    public GridPane getPlayerBoard() {
+        return playerBoard;
     }
 }
