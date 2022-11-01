@@ -9,8 +9,15 @@ import java.util.List;
 
 public class GameSession {
 
-    private GridPane enemyBoard;
-    private GridPane playerBoard;
+    private GameView gameView;
+
+    public GameSession(GameView gameView) {
+        this.gameView = gameView;
+    }
+
+    public GameSession() {
+
+    }
 
     public void startGame(Stage stage) {
         shootRandomShotAtEnemy();
@@ -32,7 +39,7 @@ public class GameSession {
         List<Integer> columns = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
         int randRow = (int)Math.floor(Math.random() * 10);
         int randCol = (int)Math.floor(Math.random() * 10);
-        Node node = getRandomNode(enemyBoard, randRow, randCol);
+        Node node = getRandomNode(gameView.enemyBoard, randRow, randCol);
         node.setStyle("-fx-background-color: black");
         int columnIndex = GridPane.getColumnIndex(node);
         int rowIndex = GridPane.getRowIndex(node);
