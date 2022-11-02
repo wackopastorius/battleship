@@ -1,8 +1,7 @@
 package com.example.battleship_sink;
-
 import java.util.Arrays;
 
-public class Ship {
+    public class Ship {
     private String[] body;
     private String type;
 
