@@ -6,10 +6,8 @@ public class Ship {
     private String[] body;
     private String type;
 
-    //Constructor w. properties
-
     public Ship(){
-        Ship hangar = new Ship();
+
     }
     public Ship(String[] body, String type) {
         this.body = Arrays.copyOf(body, body.length);
