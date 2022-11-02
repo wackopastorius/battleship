@@ -26,16 +26,16 @@ public class BattleshipMain extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("Sink the Battleship");
 
-
+        GameSession newGame = new GameSession();
+        newGame.startGame(stage);
 
         //scene, rör ej
         GameView gameView = new GameView();
-        Scene scene = new Scene(gameView.presentGameView());
-        GameSession newGame = new GameSession(gameView);
-        newGame.startGame(stage);
+        Scene scene = new Scene(gameView.createGameView());
         stage.setScene(scene);
         stage.show();
     }
+
 
 
     /**  DEN HÄR BEHÖVER VI SEN
