@@ -26,8 +26,6 @@ public class BattleshipMain extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("Sink the Battleship");
 
-
-
         //scene, rör ej
         GameView gameView = new GameView();
         Scene scene = new Scene(gameView.presentGameView());
