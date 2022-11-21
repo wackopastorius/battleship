@@ -1,5 +1,11 @@
 package com.example.battleship_sink;
 
+/*
+*
+* Author: Lada Egolaeva
+*
+*/
+
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -44,7 +50,6 @@ public class GameSession {
         int randCol = (int)Math.floor(Math.random() * 10);
         Node node = getRandomNode(gameView.enemyBoard, randRow, randCol);
         node.setStyle("-fx-background-color: black");
-        shotCoordinates.add(node);
         int columnIndex = GridPane.getColumnIndex(node);
         int rowIndex = GridPane.getRowIndex(node);
         System.out.println("Player 1 shot their shot at " + rows.get(rowIndex) + columns.get(columnIndex));
